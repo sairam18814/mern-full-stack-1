@@ -1,5 +1,5 @@
-import React from 'react'
-import "./Chat.css"
+import React from 'react';
+import "./Chat.css";
 
 function Chat() {
     return (
@@ -9,4 +9,4 @@ function Chat() {
     )
 }
 
-export default Chat
+export default Chat;

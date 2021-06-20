@@ -1,5 +1,5 @@
-import React from 'react'
-import "./Sidebar.css"
+import React from 'react';
+import "./Sidebar.css";
 
 function Sidebar() {
     return (
@@ -15,4 +15,4 @@ function Sidebar() {
     )
 }
 
-export default Sidebar
+export default Sidebar;
