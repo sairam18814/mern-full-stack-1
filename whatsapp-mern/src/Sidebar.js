@@ -3,11 +3,11 @@ import "./Sidebar.css";
 
 function Sidebar() {
     return (
-        <div>
+        <div className="sidebar">
             <h1>I am sidebar</h1>
             <div className="sidebar_header">
                 
-                <div className="sidebar_headerright">
+                <div className="sidebar_headerRight">
 
                 </div>
             </div>
