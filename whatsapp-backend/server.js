@@ -1,11 +1,11 @@
 //importing
 import express from 'express';
 import mongoose from 'mongoose';
-import Messages from './dbMessages.js';
+import Messages from "./dbMessages.js";
 import Pusher from 'pusher';
 
 //appconfig
-const app =express();
+const app = express();
 const port = process.env.PORT || 9000;
 
 const pusher = new Pusher({
@@ -20,7 +20,7 @@ const pusher = new Pusher({
 app.use(express.json());
 
 //DBconfig
-const connection_url = 'mongodb+srv://admin:O1HSej97Yl1jLg40@cluster0.v1mmy.mongodb.net/whatsappdb?retryWrites=true&w=majority';
+const connection_url = "mongodb+srv://admin:O1HSej97Yl1jLg40@cluster0.v1mmy.mongodb.net/whatsappdb?retryWrites=true&w=majority";
 
 mongoose.connect(connection_url,{
     useCreateIndex: true,
@@ -55,7 +55,7 @@ db.once('open',()=>{
 
 
 //api routes
-app.get('/',(req,res)=>res.status(200).send("hello world"));
+app.get('/',(req, res) => res.status(200).send("hello world"));
 
 app.get("/message/sync", (req, res) => {
     Messages.find((err, data) => {
@@ -82,4 +82,4 @@ app.post("/message/new", (req, res) => {
 });
 
 //listen
-app.listen(port,()=>console.log(`Listening on localhost:${port}`));
+app.listen(port, () => console.log(`Listening on localhost:${port}`));
