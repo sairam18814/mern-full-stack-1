@@ -41,7 +41,7 @@ function App() {
 
         <Sidebar />
 
-        <Chat />
+        <Chat messages={messages}/>
 
       </div>
 
