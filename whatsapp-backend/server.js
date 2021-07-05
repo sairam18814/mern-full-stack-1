@@ -1,8 +1,8 @@
 //importing
-import express from 'express';
-import mongoose from 'mongoose';
+import express from "express";
+import mongoose from "mongoose";
 import Messages from "./dbMessages.js";
-import Pusher from 'pusher';
+import Pusher from "pusher";
 
 //appconfig
 const app = express();
@@ -30,24 +30,24 @@ mongoose.connect(connection_url,{
 
 const db = mongoose.connection
 
-db.once('open',()=>{
+db.once("open",()=>{
     console.log("DB connected");
 
-    const msgCollection = db.collection('messagecontents');
+    const msgCollection = db.collection("messagecontents");
     const changeStream = msgCollection.watch();
 
-    changeStream.on('change', (change) => {
-        console.log('A change occured', change);
+    changeStream.on("change", (change) => {
+        console.log("A change occured", change);
 
-        if(change.operationType === 'insert'){
+        if(change.operationType === "insert"){
             const messageDetails = change.fullDocument;
-            pusher.trigger('messages','inserted', {
-                name: messasgeDetails.user,
+            pusher.trigger("messages","inserted", {
+                name: messageDetails.user,
                 message: messageDetails.message,
             });
         }
         else{
-            console.log('Error triggering pusher');
+            console.log("Error triggering pusher");
         }
     });
 

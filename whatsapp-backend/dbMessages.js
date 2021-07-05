@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const whatsappSchema=mongoose.Schema({
     message: String,
@@ -8,4 +8,4 @@ const whatsappSchema=mongoose.Schema({
 });
 
 //collection
-export default mongoose.model('messageContent', whatsappSchema);
+export default mongoose.model("messagecontents", whatsappSchema)
