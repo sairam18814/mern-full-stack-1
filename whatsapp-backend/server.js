@@ -19,8 +19,14 @@ const pusher = new Pusher({
 //middleware
 app.use(express.json());
 
+app.use((req, res, next)=>{
+    res.setHeader("Acces-Control-Allow-Origin","*");
+    res.setHeader("Acces-Control-Allow-Headers","*");
+    next();
+});
+
 //DBconfig
-const connection_url = "mongodb+srv://admin:O1HSej97Yl1jLg40@cluster0.v1mmy.mongodb.net/whatsappdb?retryWrites=true&w=majority";
+const connection_url = "mongodb+srv://admin:B8eMA87IJm4Rnxdq@cluster0.dmsbt.mongodb.net/whatsappdb?retryWrites=true&w=majority";
 
 mongoose.connect(connection_url,{
     useCreateIndex: true,
