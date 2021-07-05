@@ -5,7 +5,7 @@ import { AttachFile, MoreVert, SearchOutlined, SettingsInputAntenna } from '@mat
 import  InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import MicIcon from "@material-ui/icons/Mic";
 
-function Chat() {
+function Chat({ messages }) {
     return (
         <div className="chat">
             <div className="chat_header">
