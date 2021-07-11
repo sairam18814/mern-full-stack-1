@@ -64,6 +64,7 @@ function Chat({ messages }) {
                 <MicIcon/>
             </div>
         </div>
+        
     )
 }
 
